@@ -358,3 +358,62 @@ int LibroMostrarListaMinotauro(LinkedList* minotaurosBooks, LinkedList* pArrayLi
 
 	return state;
 }
+
+int libros_Contados(void* unLibro){
+	int isOk;
+	eLibro* auxiliarLibro;
+	float precio;
+
+	isOk = 0;
+
+	if(unLibro != NULL)
+	{
+		auxiliarLibro = (eLibro*)unLibro;
+
+		if(!LibroGetPrecio(auxiliarLibro, &precio))
+		{
+			if(precio > 500)
+			{
+				isOk = 1;
+				puts("libro +");
+
+			}
+		}
+	}
+
+	return isOk;
+}
+
+
+int librosFiltrarPearson(void* unLibro)
+{
+	int isOk;
+	eLibro* auxiliarLibro;
+	int idEditorial;
+	float precioLibro;
+	int acumulador=0;
+
+	isOk = 0;
+
+	if(unLibro != NULL)
+	{
+		auxiliarLibro = (eLibro*)unLibro;
+
+		if(!LibroGetIdEditorial(auxiliarLibro, &idEditorial))
+		{
+			if(idEditorial == 3 && !LibroGetPrecio(auxiliarLibro, &precioLibro))
+			{
+				acumulador += precioLibro;
+				puts("Acumule un libro pearson");
+				isOk = 1;
+			}
+		}
+
+		printf("el acumulador es : %f", acumulador);
+	}
+
+
+
+	return isOk;
+}
+

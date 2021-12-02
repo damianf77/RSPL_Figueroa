@@ -10,7 +10,9 @@ void imprimeMenu(void)
 	printf("\t\t 4) Imprimir por pantalla todos los datos de los libros.\n");
 	printf("\t\t 5) Realizar un listado de los libros de la editorial MINOTAURO. Para ello deberá utilizar la función ll_filter* del LinkedList.\n");
 	printf("\t\t 6) Generar el archivo de salida “mapeado.csv” luego de aplicar la función map.\n");
-	printf("\t\t 7) Salir\n");
+	printf("\t\t 7) Determinar cuántos libros cuestan mas de $500.\n");
+	printf("\t\t 8) Determinar la sumatoria de precios de los libros de la editorial PEARSON\n");
+	printf("\t\t 9) Salir\n");
 }
 
 int validaEntero(char mensaje [], char error [], int min, int max)

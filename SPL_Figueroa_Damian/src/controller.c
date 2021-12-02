@@ -184,5 +184,49 @@ int controllerLlamarMapeado(LinkedList* pArrayListBooks, LinkedList* pArrayListE
 	return state;
 }
 
+int controllerContar(char* path ,LinkedList* pArrayList, LinkedList* pArrayListEditorial){
+	int isOk;
+	FILE* miArchivo;
+	int contador;
+
+	isOk = -1;
+
+	if(path != NULL && pArrayList != NULL)
+	{
+		miArchivo = fopen(path, "r");
+
+		contador = ll_count(pArrayList, libros_Contados);
+
+		printf("\t\t La cantidad de libros con precio mayor a 500 es %d ",contador);
+
+	}
+	fclose(miArchivo);
+
+	return isOk;
+}
+
+int Controller_Acumulador(char* path ,LinkedList* pArrayList, LinkedList* pArrayListEditorial){
+	int rtn;
+	FILE* miArchivo;
+	int contador;
+
+	rtn = 1;
+
+	if(path != NULL && pArrayList != NULL)
+	{
+		miArchivo = fopen(path, "r");
+		contador = ll_count(pArrayList, librosFiltrarPearson);
+
+		//contador = ll_filter(pArrayList, librosFiltrarPearson);
+
+		printf("%d", contador);
+
+
+
+	}
+
+	fclose(miArchivo);
+	return rtn;
+}
 
 

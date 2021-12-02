@@ -15,7 +15,8 @@ int controllerMostrarListaLibrosEditoriales(LinkedList* booksList, LinkedList* e
 int controllerMinotauroFiltro (LinkedList* booksList, LinkedList* editorialsList);
 int controllerGuardarMapeoTexto(char* path , LinkedList* pArrayListBooks, LinkedList* pArrayListEditorialsList);
 int controllerLlamarMapeado(LinkedList* pArrayListBooks, LinkedList* pArrayListEditorialsList);
-
+int controllerContar(char* path ,LinkedList* pArrayList, LinkedList* pArrayListEditorial);
+int Controller_Acumulador(char* path ,LinkedList* pArrayList, LinkedList* pArrayListEditorial);
 
 
 

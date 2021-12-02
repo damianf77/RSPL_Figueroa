@@ -33,6 +33,10 @@ int LibroMostrarLista(LinkedList* pListaLibros, LinkedList* pListaEditoriales);
 int LibroCompararPorAutor(void* elemento1, void* elemento2);
 int LibroMostrarLibroMinotauro(eLibro* libros,LinkedList* pListaEditoriales);
 int LibroMostrarListaMinotauro(LinkedList* pListaLibros, LinkedList* pListaEditoriales);
+int librosFiltrarPearson(void* unLibro);
+int libros_Contados(void* unLibro);
+
+
 
 
 

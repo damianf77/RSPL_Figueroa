@@ -685,11 +685,28 @@ int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
 
 int ll_count(LinkedList* this, int (*fn)(void* element))
 {
-	int returnAux;
 
-	returnAux = -1;
+	int acumulador = 0;
+	int i;
+	int len = ll_len(this);
 
-	return returnAux;
+	if(this != NULL && fn != NULL){
+
+		if(ll_isEmpty(this) == 0){
+
+			void* pElement;
+			for(i=0;i<len;i++){
+				pElement = ll_get(this,i);
+				if(pElement != NULL){
+					acumulador += fn(pElement);
+				}
+			}
+		}
+	} else {
+		return acumulador;
+	}
+
+	return acumulador;
 }
 
 ///función ll_filter* del LinkedList. Guardar el listado en un archivo csv.

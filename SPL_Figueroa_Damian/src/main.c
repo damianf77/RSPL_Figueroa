@@ -98,7 +98,7 @@ int main(void)
 
        	imprimeMenu();
        	menuOption = validaEntero("\n\n\t\t Por favor, ingrese una opcion del menu del 1 al 9: ",
-       	"\n\n\t\t\t\t      ERROR - (Has ingresado un numero no contemplado en el menu reintente) - ERROR\n\n", 1, 7);
+       	"\n\n\t\t\t\t      ERROR - (Has ingresado un numero no contemplado en el menu reintente) - ERROR\n\n", 1, 9);
 
            switch(menuOption)
            {
@@ -182,8 +182,31 @@ int main(void)
            	   case 6:
            		   controllerLlamarMapeado(booksList, editorialsList);
            	   break;
+           	   case 7:
+           		   if(!ll_isEmpty(booksList)){
+						if(!controllerContar("libros.csv",booksList, booksList))
+						{
+								puts("\t\t Se realizo el mapeo con exito");
+						}
+
+					}else{
+						puts("\t\t Error, no se cargaron los libros");
+					}
+           	   break;
+           	   case 8:
+					if(!ll_isEmpty(booksList)){
+						if(!Controller_Acumulador("libros.csv",booksList, booksList))
+						{
+								puts("\t\t Se realizo el mapeo con exito");
+						}
+
+						}else{
+							puts("\t\t Error, no se cargaron los libros");
+						}
+
+           	   break;
           }
-       }while(menuOption != 7);
+       }while(menuOption != 9);
 
 
 
